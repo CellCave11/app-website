@@ -132,6 +132,7 @@
         /* APP CARDS */
 .apps-grid {
     display: flex;
+    flex-wrap: nowrap;
     gap: 25px;
     overflow-x: auto;
     scroll-behavior: smooth;
@@ -139,19 +140,11 @@
     padding: 10px 5px 20px;
 }
 
-.apps-grid::-webkit-scrollbar {
-    height: 8px;
-}
-
-.apps-grid::-webkit-scrollbar-thumb {
-    background: #d1d5db;
-    border-radius: 10px;
-}
-
-.app-card {
-    min-width: 300px;
+.apps-grid .app-card {
     flex: 0 0 300px;
+    width: 300px;
     scroll-snap-align: start;
+
 }
         }
 
