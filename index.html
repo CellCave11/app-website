@@ -130,10 +130,29 @@
         }
 
         /* APP CARDS */
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+.apps-grid {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 10px 5px 20px;
+}
+
+.apps-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.apps-grid::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+
+.app-card {
+    min-width: 300px;
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+}
         }
 
         .app-card {
@@ -360,7 +379,11 @@
             <p class="section-description">
                 Explore our collection of mobile applications.
             </p>
+             <div class="apps-slider">
 
+    <button class="slider-btn prev" onclick="slideApps(-1)">←</button>
+
+    <div class="apps-grid">
             <div class="apps-grid">
 
                 <div class="app-card">
@@ -486,7 +509,10 @@
                 </p>
 
             </div>
-
+<div class="slider-controls">
+    <button onclick="slideApps(-1)">←</button>
+    <button onclick="slideApps(1)">→</button>
+</div>
         </section>
 
 
@@ -556,6 +582,14 @@
         </div>
 
     </footer>
-
+<script>
+function slideApps(direction) {
+    const slider = document.querySelector('.apps-grid');
+    slider.scrollBy({
+        left: direction * 325,
+        behavior: 'smooth'
+    });
+}
+</script>
 </body>
 </html>
