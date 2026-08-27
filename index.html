@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cell Cave - Mobile Apps</title>
+    <title>Cell Cave - Simple Utility Apps</title>
 
-    <meta name="description" content="Cell Cave creates simple, useful and user-friendly mobile applications.">
+    <meta name="description" content="Cell Cave creates simple, practical and user-friendly utility apps for everyday digital needs.">
 
     <style>
         * {
@@ -27,13 +27,14 @@
         }
 
         /* NAVBAR */
+
         nav {
             width: 100%;
             background: #ffffff;
             border-bottom: 1px solid #e5e7eb;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .nav-container {
@@ -49,38 +50,70 @@
             font-size: 24px;
             font-weight: 700;
             color: #111827;
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 25px;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #4b5563;
-            font-size: 15px;
-            font-weight: 500;
+            font-weight: 600;
+            transition: 0.2s ease;
         }
 
         .nav-links a:hover {
             color: #2563eb;
         }
 
-        /* HERO */
-        .hero {
+        /* GENERAL */
+
+        .container {
             max-width: 1150px;
             margin: auto;
-            padding: 100px 25px 90px;
+            padding: 0 25px;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
             text-align: center;
+            margin-bottom: 15px;
+            font-size: 38px;
+            color: #111827;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 45px;
+            color: #6b7280;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 110px 25px;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: auto;
         }
 
         .hero h1 {
-            font-size: 52px;
-            line-height: 1.15;
-            margin-bottom: 22px;
+            font-size: 58px;
+            line-height: 1.1;
             color: #111827;
+            margin-bottom: 20px;
         }
 
         .hero h1 span {
@@ -89,136 +122,158 @@
 
         .hero p {
             max-width: 680px;
-            margin: auto;
-            font-size: 19px;
+            margin: 0 auto 30px;
             color: #6b7280;
+            font-size: 19px;
         }
 
         .hero-button {
             display: inline-block;
-            margin-top: 35px;
-            padding: 14px 25px;
+            padding: 14px 24px;
             background: #2563eb;
-            color: white;
+            color: #ffffff;
             text-decoration: none;
             border-radius: 10px;
-            font-weight: 600;
+            font-weight: 700;
+            transition: 0.2s ease;
         }
 
         .hero-button:hover {
-            background: #1d4ed8;
+            transform: translateY(-2px);
         }
 
-        /* SECTION */
-        section {
-            max-width: 1150px;
-            margin: auto;
-            padding: 75px 25px;
+        /* APPS */
+
+        .apps-wrapper {
+            position: relative;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 34px;
-            margin-bottom: 12px;
-            color: #111827;
+        .apps-grid {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            gap: 25px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            padding: 10px 5px 25px;
+            scrollbar-width: thin;
         }
 
-        .section-description {
-            text-align: center;
-            color: #6b7280;
-            margin-bottom: 45px;
+        .apps-grid::-webkit-scrollbar {
+            height: 8px;
         }
 
-        /* APP CARDS */
-.apps-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 25px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    padding: 10px 5px 20px;
-}
-
-.apps-grid .app-card {
-    flex: 0 0 300px;
-    width: 300px;
-    scroll-snap-align: start;
-
-}
+        .apps-grid::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 20px;
         }
 
         .app-card {
-            background: white;
+            flex: 0 0 300px !important;
+            width: 300px !important;
+            min-width: 300px !important;
+            background: #ffffff;
             border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
+            border-radius: 18px;
+            padding: 28px;
+            scroll-snap-align: start;
             transition: 0.25s ease;
         }
 
         .app-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
         }
 
         .app-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            border-radius: 18px;
+            width: 65px;
+            height: 65px;
+            border-radius: 16px;
             background: #e5e7eb;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: #6b7280;
+            font-size: 20px;
+            font-weight: 700;
+            color: #4b5563;
+            margin-bottom: 20px;
         }
 
         .app-card h3 {
-            font-size: 21px;
+            font-size: 23px;
             margin-bottom: 10px;
+            color: #111827;
         }
 
         .app-card p {
             color: #6b7280;
-            font-size: 15px;
+            margin-bottom: 20px;
+            min-height: 72px;
         }
 
         .app-link {
-            display: inline-block;
-            margin-top: 18px;
             text-decoration: none;
             color: #2563eb;
-            font-weight: 600;
+            font-weight: 700;
+        }
+
+        /* SLIDER BUTTONS */
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .slider-controls button {
+            width: 45px;
+            height: 45px;
+            border: 1px solid #d1d5db;
+            border-radius: 50%;
+            background: #ffffff;
+            color: #111827;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .slider-controls button:hover {
+            background: #f3f4f6;
+            transform: translateY(-2px);
         }
 
         /* ABOUT */
-        .about-box {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 18px;
-            padding: 45px;
+
+        .about {
+            background: #ffffff;
+        }
+
+        .about-content {
+            max-width: 750px;
+            margin: auto;
             text-align: center;
         }
 
-        .about-box p {
-            max-width: 750px;
-            margin: auto;
+        .about-content p {
             color: #6b7280;
+            font-size: 18px;
         }
 
         /* SUPPORT */
+
         .support-box {
-            text-align: center;
-            background: #eef4ff;
+            max-width: 750px;
+            margin: auto;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
             border-radius: 18px;
-            padding: 55px 25px;
+            padding: 35px;
+            text-align: center;
         }
 
-        .support-box h2 {
-            font-size: 32px;
+        .support-box h3 {
+            font-size: 25px;
             margin-bottom: 12px;
         }
 
@@ -227,16 +282,18 @@
             margin-bottom: 20px;
         }
 
-        .email {
-            font-weight: 600;
+        .support-email {
             color: #2563eb;
+            text-decoration: none;
+            font-weight: 700;
         }
 
         /* FOOTER */
+
         footer {
             background: #111827;
             color: #d1d5db;
-            padding: 45px 25px;
+            padding: 40px 25px;
         }
 
         .footer-container {
@@ -247,16 +304,18 @@
             gap: 30px;
         }
 
-        .footer-title {
-            color: white;
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 10px;
+        .footer-brand h3 {
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            color: #9ca3af;
         }
 
         .footer-links {
             display: flex;
-            gap: 22px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
@@ -265,113 +324,96 @@
             text-decoration: none;
         }
 
-        .footer-links a:hover {
-            color: white;
-        }
-
         .copyright {
             max-width: 1150px;
             margin: 30px auto 0;
-            padding-top: 25px;
+            padding-top: 20px;
             border-top: 1px solid #374151;
-            font-size: 14px;
             color: #9ca3af;
+            font-size: 14px;
         }
 
         /* MOBILE */
-        @media (max-width: 800px) {
+
+        @media (max-width: 768px) {
+
             .nav-container {
                 flex-direction: column;
                 gap: 15px;
             }
 
             .nav-links {
-                gap: 18px;
+                gap: 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
 
             .hero {
-                padding: 70px 20px;
+                padding: 80px 20px;
             }
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 42px;
             }
 
-            .hero p {
-                font-size: 17px;
+            section {
+                padding: 70px 0;
             }
 
-            .apps-grid {
-                grid-template-columns: 1fr;
+            .section-title {
+                font-size: 32px;
+            }
+
+            .app-card {
+                flex-basis: 280px !important;
+                width: 280px !important;
+                min-width: 280px !important;
             }
 
             .footer-container {
                 flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-links {
-                justify-content: center;
             }
         }
-        /* FORCE APP SLIDER */
-
-.apps-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 25px !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    scroll-behavior: smooth;
-    width: 100%;
-}
-
-.apps-grid .app-card {
-    display: block !important;
-    flex: 0 0 300px !important;
-    width: 300px !important;
-    min-width: 300px !important;
-}
     </style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- NAVBAR -->
+
     <nav>
         <div class="nav-container">
 
-            <div class="logo">
+            <a href="#home" class="logo">
                 Cell Cave
-            </div>
+            </a>
 
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#apps">Apps</a></li>
-                <li><a href="#about">About</a></li>
                 <li><a href="#support">Support</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
 
         </div>
     </nav>
 
 
-    <!-- HERO -->
-    <main id="home">
+    <!-- HOME -->
 
-        <div class="hero">
+    <section class="hero" id="home">
+
+        <div class="hero-content">
 
             <h1>
-                Simple Apps.<br>
-                <span>Better Experiences.</span>
+                Simple Utilities.
+                <span>Smarter Everyday.</span>
             </h1>
 
             <p>
-                We create simple, useful and user-friendly mobile
-                applications designed to make everyday tasks easier.
+                Cell Cave creates simple, practical and user-friendly
+                mobile utility apps designed to make everyday digital
+                tasks easier.
             </p>
 
             <a href="#apps" class="hero-button">
@@ -380,209 +422,286 @@
 
         </div>
 
+    </section>
 
-        <!-- APPS -->
-        <section id="apps">
+
+    <!-- APPS -->
+
+    <section id="apps">
+
+        <div class="container">
 
             <h2 class="section-title">
                 Our Apps
             </h2>
 
             <p class="section-description">
-                Explore our collection of mobile applications.
+                Explore our collection of simple and useful utility
+                applications built for everyday needs.
             </p>
-             <div class="apps-slider">
-
-    <button class="slider-btn prev" onclick="slideApps(-1)">←</button>
-
-    <div class="apps-grid">
-            <div class="apps-grid">
-
-                <div class="app-card">
-
-              <div class="app-card">
-
-    <div class="app-icon">
-        SS
-    </div>
-
-    <h3>
-        Status Saver
-    </h3>
-
-    <p>
-        Save and manage your favorite status updates with a simple and convenient experience.
-    </p>
-
-    <a href="status-saver.html" class="app-link">
-        View Details →
-    </a>
-
-</div>
-
-               <div class="app-card">
-
-    <div class="app-icon">
-        FR
-    </div>
-
-    <h3>
-        File Reader
-    </h3>
-
-    <p>
-        Open, view and manage common files with a simple and user-friendly experience.
-    </p>
-
-    <a href="#" class="app-link">
-        View Details →
-    </a>
-
-</div>
-
-              <div class="app-card">
-
-    <div class="app-icon">
-        AC
-    </div>
-
-    <h3>
-        Age Calculator
-    </h3>
-
-    <p>
-        Calculate your exact age and explore useful date information quickly and easily.
-    </p>
-
-    <a href="#" class="app-link">
-        View Details →
-    </a>
-
-</div>
-<div class="app-card">
-
-    <div class="app-icon">
-        VD
-    </div>
-
-    <h3>
-        All Video Downloader
-    </h3>
-
-    <p>
-        A simple utility for managing and downloading videos from supported sources.
-    </p>
-
-    <a href="#" class="app-link">
-        View Details →
-    </a>
-
-</div>
 
 
-<div class="app-card">
+            <div class="apps-wrapper">
 
-    <div class="app-icon">
-        CB
-    </div>
-
-    <h3>
-        Cloud Backup
-    </h3>
-
-    <p>
-        Back up and organize important files with a simple and convenient experience.
-    </p>
-
-    <a href="#" class="app-link">
-        View Details →
-    </a>
-
-</div>
-            </div>
-
-        </section>
+                <div class="apps-grid" id="appsSlider">
 
 
-        <!-- ABOUT -->
-        <section id="about">
+                    <!-- STATUS SAVER -->
 
-            <h2 class="section-title">
-                About Us
-            </h2>
+                    <div class="app-card">
 
-            <div class="about-box">
+                        <div class="app-icon">
+                            SS
+                        </div>
 
-                <p>
-                    We develop mobile applications focused on simplicity,
-                    usability and a better experience for our users.
-                    Our goal is to create useful tools that people can
-                    rely on in their everyday lives.
-                </p>
+                        <h3>
+                            Status Saver
+                        </h3>
 
-            </div>
-<div class="slider-controls">
-    <button onclick="slideApps(-1)">←</button>
-    <button onclick="slideApps(1)">→</button>
-</div>
-        </section>
+                        <p>
+                            Save and manage your favorite status
+                            content with a simple and convenient
+                            experience.
+                        </p>
+
+                        <a href="status-saver.html" class="app-link">
+                            View Details →
+                        </a>
+
+                    </div>
 
 
-        <!-- SUPPORT -->
-        <section id="support">
+                    <!-- FILE READER -->
 
-            <div class="support-box">
+                    <div class="app-card">
 
-                <h2>
-                    Need Help?
-                </h2>
+                        <div class="app-icon">
+                            FR
+                        </div>
 
-                <p>
-                    If you have any questions or need support with our apps,
-                    feel free to contact us.
-                </p>
+                        <h3>
+                            File Reader
+                        </h3>
 
-                <div class="email">
-                    support@example.com
+                        <p>
+                            Open, view and manage common files with
+                            a simple and user-friendly experience.
+                        </p>
+
+                        <a href="#" class="app-link">
+                            View Details →
+                        </a>
+
+                    </div>
+
+
+                    <!-- AGE CALCULATOR -->
+
+                    <div class="app-card">
+
+                        <div class="app-icon">
+                            AC
+                        </div>
+
+                        <h3>
+                            Age Calculator
+                        </h3>
+
+                        <p>
+                            Calculate your exact age and explore
+                            useful date information quickly and easily.
+                        </p>
+
+                        <a href="#" class="app-link">
+                            View Details →
+                        </a>
+
+                    </div>
+
+
+                    <!-- ALL VIDEO DOWNLOADER -->
+
+                    <div class="app-card">
+
+                        <div class="app-icon">
+                            VD
+                        </div>
+
+                        <h3>
+                            All Video Downloader
+                        </h3>
+
+                        <p>
+                            A simple utility for managing and
+                            downloading videos from supported sources.
+                        </p>
+
+                        <a href="#" class="app-link">
+                            View Details →
+                        </a>
+
+                    </div>
+
+
+                    <!-- CLOUD BACKUP -->
+
+                    <div class="app-card">
+
+                        <div class="app-icon">
+                            CB
+                        </div>
+
+                        <h3>
+                            Cloud Backup
+                        </h3>
+
+                        <p>
+                            Back up and organize important files
+                            with a simple and convenient experience.
+                        </p>
+
+                        <a href="#" class="app-link">
+                            View Details →
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- SLIDER CONTROLS -->
+
+                <div class="slider-controls">
+
+                    <button onclick="slideApps(-1)" aria-label="Previous apps">
+                        ←
+                    </button>
+
+                    <button onclick="slideApps(1)" aria-label="Next apps">
+                        →
+                    </button>
+
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
-    </main>
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                About Cell Cave
+            </h2>
+
+            <div class="about-content">
+
+                <p>
+                    Cell Cave is a mobile app development company
+                    focused on creating simple, practical and
+                    accessible utility applications. Our goal is to
+                    build tools that provide useful experiences
+                    without unnecessary complexity.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUPPORT -->
+
+    <section id="support">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Support
+            </h2>
+
+            <p class="section-description">
+                Need help with one of our applications?
+                Our support team is here to help.
+            </p>
+
+            <div class="support-box">
+
+                <h3>
+                    Contact Cell Cave
+                </h3>
+
+                <p>
+                    For questions, feedback or app-related support,
+                    please contact us through email.
+                </p>
+
+                <a
+                    href="mailto:support@cellcave.com"
+                    class="support-email"
+                >
+                    support@cellcave.com
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
     <!-- FOOTER -->
+
     <footer>
 
         <div class="footer-container">
 
-            <div>
-                <div class="footer-title">
+            <div class="footer-brand">
+
+                <h3>
                     Cell Cave
-                </div>
+                </h3>
 
                 <p>
-                    Mobile apps made simple.
+                    Simple Utilities. Smarter Everyday.
                 </p>
+
             </div>
 
 
             <div class="footer-links">
 
-                <a href="#home">Home</a>
+                <a href="#home">
+                    Home
+                </a>
 
-                <a href="#apps">Apps</a>
+                <a href="#apps">
+                    Apps
+                </a>
 
-                <a href="#about">About</a>
+                <a href="#support">
+                    Support
+                </a>
 
-                <a href="#support">Support</a>
+                <a href="#about">
+                    About
+                </a>
 
-                <!-- Future pages -->
-                <a href="privacy/">Privacy Policy</a>
+                <a href="privacy/">
+                    Privacy Policy
+                </a>
 
-                <a href="terms/">Terms of Use</a>
+                <a href="terms/">
+                    Terms of Use
+                </a>
 
             </div>
 
@@ -590,18 +709,30 @@
 
 
         <div class="copyright">
+
             © 2026 Cell Cave. All rights reserved.
+
         </div>
 
     </footer>
-<script>
-function slideApps(direction) {
-    const slider = document.querySelector('.apps-grid');
-    slider.scrollBy({
-        left: direction * 325,
-        behavior: 'smooth'
-    });
-}
-</script>
+
+
+    <!-- SLIDER JAVASCRIPT -->
+
+    <script>
+
+        function slideApps(direction) {
+
+            const slider = document.getElementById("appsSlider");
+
+            slider.scrollBy({
+                left: direction * 325,
+                behavior: "smooth"
+            });
+
+        }
+
+    </script>
+
 </body>
 </html>
