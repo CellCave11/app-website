@@ -316,6 +316,25 @@
                 justify-content: center;
             }
         }
+        /* FORCE APP SLIDER */
+
+.apps-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 25px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.apps-grid .app-card {
+    display: block !important;
+    flex: 0 0 300px !important;
+    width: 300px !important;
+    min-width: 300px !important;
+}
     </style>
 </head>
 
